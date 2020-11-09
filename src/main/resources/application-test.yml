@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 12345678
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+  #jpa:
+  #show-sql: true
+  #open-in-view: true
+
+  thymeleaf:
+    mode: HTML5
+    encoding: utf-8
+
+    servlet:
+      content-type: text/html
+    cache: false
+    #开发时关闭缓存,不然没法看到实时页面
+
+
+
+
+    #mybatis.type-aliases-package=com.gao.security.bean
+    #mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
+mybatis:
+  type-aliases-package: com.yjf.entity
+  mapper-locations: classpath:mapper/*.xml
+  check-config-location: true
+
+logging:
+  level:
+    com:
+      yjf:
+        dao: trace
+    org:
+      springframework:
+        cache: trace   #logging.config=classpath:log4j2.xml
+  config: classpath:log4j2.xml
+com:
+  xxx:
+    path: hellow world!
